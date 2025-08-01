@@ -1,0 +1,110 @@
+/* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #012a4a;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  object-fit: contain;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links li a:hover {
+  color: #90e0ef;
+}
+
+/* Fix burger alignment */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1150;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #012a4a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    font-size: 1.2rem;
+  }
+
+ @media (max-width: 768px) {
+  .logo {
+    height: 40px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-brand {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+  /* Optional: lock background scroll when menu is open */
+  /* body.menu-open {
+    overflow: hidden;
+  } */
+}
