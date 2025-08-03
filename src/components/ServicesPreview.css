@@ -1,6 +1,7 @@
 .services-section {
   padding: 4rem 1rem; /* Same top and bottom spacing */
   background: #f9f9fb;
+
   text-align: center;
 }
 
@@ -62,14 +63,14 @@
 }
 
 .service-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #002a4a;
 }
 
 .service-card p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #444;
   line-height: 1.5;
 }

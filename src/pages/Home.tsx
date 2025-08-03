@@ -1,10 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { LangContext } from "../i18n/LanguageContext";
 import ServicesPreview from "../components/ServicesPreview";
 import "./Home.css";
+import AboutPreview from "../components/AboutPreview";
+import TrustIcons from "../components/TrustIcons";
+import TestimonialsPreview from "../components/TestimonialsPreview";
+import ContactCTA from "../components/ContactCTA";
 
 const Home: React.FC = () => {
   const { lang } = useContext(LangContext);
+
+
+
+
 
   return (
     <main className="main-content">
@@ -12,7 +20,7 @@ const Home: React.FC = () => {
         style={{
           width: '100vw',
           height: '100vh',
-          backgroundImage: "url('/assets/hero.jpg')",
+          backgroundImage: "url('/assets/hero.png')",
           backgroundSize: 'cover',
          backgroundPosition: 'right 50% center',
           backgroundRepeat: 'no-repeat',
@@ -46,7 +54,7 @@ const Home: React.FC = () => {
             }}
           />
 
-          <h2 style={{ fontSize: '1.25rem', fontWeight: 'normal', marginBottom: '0.5rem', color: '#E1F3FF' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'normal', marginBottom: '0.5rem', color: '#E1F3FF' }}>
             {lang === 'fr'
               ? 'Experts en propreté professionnelle sur la Rive-Sud de Montréal'
               : 'Professional Cleaning Experts on Montreal’s South Shore'}
@@ -76,9 +84,15 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <ServicesPreview lang={lang} />
+      <TrustIcons lang={lang} />
+         <ServicesPreview lang={lang} />
+         <AboutPreview lang={lang} />
+      <TestimonialsPreview lang={lang} />
 
-      <h1>
+<ContactCTA lang={lang} />
+   
+
+      {/* <h1>
         {lang === "fr"
           ? "Bienvenue chez Mar-Bec Entretien Inc."
           : "Welcome to Mar-Bec Entretien Inc."}
@@ -111,7 +125,7 @@ const Home: React.FC = () => {
             {lang === "fr" ? "Contactez-nous" : "Contact Us"}
           </button>
         </a>
-      </section>
+      </section> */}
     </main>
   );
 };
