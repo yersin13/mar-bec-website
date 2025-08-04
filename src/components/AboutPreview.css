@@ -1,11 +1,32 @@
 .about-preview {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 1rem;
+  background-color: #f9f9fb;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/about1.png');
+  background-size: cover;
+  background-position: center;
+   background-color: rgba(1, 42, 74, 0.6);
+  background-blend-mode: overlay; 
+  filter: blur(12px) brightness(0.8);
+  opacity: 0.8; 
+  z-index: 0;
+}
+
+
+.about-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
-  padding: 4rem 1rem;
-  background-color: #f9f9fb;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -20,59 +41,52 @@
 .about-images {
   display: flex;
   justify-content: center;
-  /* position: relative; */
+  align-items: center;
+  padding-right: 2rem;
 }
 
 .about-images img {
   width: 100%;
   max-width: 600px;
   height: auto;
+  object-fit: cover;
   border-radius: 12px;
-  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.experience-box {
-  position: absolute;
-  bottom: -40px;
-  left: 40px;
-  background-color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  font-weight: bold;
-  text-align: center;
-}
-
-.experience-box span {
-  display: block;
-  font-size: 2rem;
-  color: #012a4a;
-}
-
+/* ✅ Updated aesthetic box styling */
 .about-text {
-  /* padding-left: 2rem; */
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
   max-width: 600px;
+  width: 100%;
+  color: #111;
+  z-index: 2;
 }
 
 .about-text h4 {
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #003366;
   margin-bottom: 1rem;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #111;
-  line-height: 1.3;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: #000;
 }
 
 .about-text p {
-  color: #555;
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 1.8rem;
   line-height: 1.6;
 }
 
@@ -85,36 +99,42 @@
 .features-list li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #222;
 }
 
 .features-list li::before {
-  content: '✔';
-  color: #0077b6;
-  font-weight: bold;
+  content: "✓";
+  color: #ffd500;
+  font-size: 1.3rem;
+  font-weight: 900;
 }
 
 .about-btn {
   background-color: #ffd500;
   color: #000;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1.1rem;
   font-weight: bold;
-  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .about-btn:hover {
   background-color: #e6c200;
+  transform: translateY(-1px);
 }
+
+/* ✅ Responsive Design */
 @media (max-width: 768px) {
-  .about-preview {
-    /* flex-direction: column; */
+  .about-content {
+    flex-direction: column;
     padding: 3rem 1rem;
   }
 
@@ -124,15 +144,12 @@
     padding: 0;
     text-align: center;
   }
-
-  .about-text ul {
-    /* text-align: center; */
-    margin: 0 auto;
-    max-width: 400px;
+  .about-text{
+    padding: 10px;
   }
 
-  /* 🔻 Hide the experience box on mobile */
-  .experience-box {
-    display: none;
+  .about-text ul {
+    margin: 0 auto;
+    max-width: 400px;
   }
 }
