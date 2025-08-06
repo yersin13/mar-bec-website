@@ -3,6 +3,7 @@ import "./ServicesPreview.css";
 
 const services = [
   {
+    id: "commercial",
     icon: "/assets/icon-office.png",
     titleFr: "Entretien commercial",
     titleEn: "Commercial Cleaning",
@@ -10,6 +11,7 @@ const services = [
     descEn: "Reliable service for offices and business spaces.",
   },
   {
+    id: "residential",
     icon: "/assets/icon-move.png",
     titleFr: "Entretien résidentiel",
     titleEn: "Residential Cleaning",
@@ -17,6 +19,7 @@ const services = [
     descEn: "Careful cleaning for houses, condos, and apartments.",
   },
   {
+    id: "deep",
     icon: "/assets/icon-deep.png",
     titleFr: "Grand ménage",
     titleEn: "Deep Cleaning",
@@ -24,6 +27,7 @@ const services = [
     descEn: "Thorough cleaning for high-traffic or dirty areas.",
   },
   {
+    id: "post-construction",
     icon: "/assets/icon-construction.png",
     titleFr: "Après-construction",
     titleEn: "Post-Construction",
@@ -31,6 +35,7 @@ const services = [
     descEn: "Professional cleanup after construction or renovations.",
   },
   {
+    id: "windows",
     icon: "/assets/icon-windows.png",
     titleFr: "Lavage de vitres",
     titleEn: "Window Cleaning",
@@ -38,6 +43,7 @@ const services = [
     descEn: "Streak-free, sparkling windows and glass surfaces.",
   },
   {
+    id: "security",
     icon: "/assets/icon-security.png",
     titleFr: "Surveillance",
     titleEn: "Security Services",
@@ -60,11 +66,11 @@ const ServicesPreview = ({ lang }: { lang: "fr" | "en" }) => {
 
       <div className="services-grid">
         {services.map((s, i) => (
-          <div className="service-card" key={i}>
+          <a href={`/services#${s.id}`} className="service-card" key={i}>
             <img src={s.icon} alt={s[`title${lang === "fr" ? "Fr" : "En"}`]} />
             <h3>{s[`title${lang === "fr" ? "Fr" : "En"}`]}</h3>
             <p>{s[`desc${lang === "fr" ? "Fr" : "En"}`]}</p>
-          </div>
+          </a>
         ))}
       </div>
     </section>

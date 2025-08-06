@@ -13,22 +13,22 @@ interface Props {
 const ServiceSection: React.FC<Props> = ({ title, description, details, image, lang, reverse }) => {
   return (
     <div className="service-wrapper">
-    <section className={`service-section ${reverse ? "reverse" : ""}`}>
-      <div className="service-text">
-        <h2>{title[lang]}</h2>
-        <p>{description[lang]}</p>
-        {details && (
-          <ul>
-            {details[lang].map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div className="service-image">
-        <img src={image} alt={title[lang]} />
-      </div>
-    </section>
+      <section className={`service-section ${reverse ? "reverse" : ""}`}>
+        <div className="service-text">
+          <h2>{title[lang]}</h2>
+          <p>{description[lang]}</p>
+          {details && (
+            <ul>
+              {details[lang].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className="service-image">
+          <img src={image} alt={title[lang]} />
+        </div>
+      </section>
     </div>
   );
 };
