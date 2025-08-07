@@ -28,6 +28,7 @@ const Home: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
+          
         }}
       >
         <div

@@ -1,0 +1,72 @@
+.about-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #012a4a;
+}
+
+.about-hero {
+  height: 60vh;
+  background-image: url('/assets/about1.png'); /* replace with your actual image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-hero .overlay {
+  background-color: rgba(1, 42, 74, 0.6);
+  padding: 3rem;
+  width: 100%;
+  color: #fff;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+}
+
+.about-intro, .about-values, .about-founder, .about-testimonials {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.about-intro p, .about-founder p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-values ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.about-values li {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-testimonials .testimonial-card {
+  background-color: #f1f9ff;
+  border-left: 4px solid #014f86;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #012a4a;
+}
+
+.about-testimonials span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #014f86;
+}

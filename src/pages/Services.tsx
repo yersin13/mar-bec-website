@@ -1,99 +1,84 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
 import { LangContext } from "../i18n/LanguageContext";
 import { services } from "../data/ServicesData";
+import { Link } from "react-router-dom";
 import "./Services.css";
 
 const Services: React.FC = () => {
   const { lang } = useContext(LangContext);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    const checkWidth = () => setIsMobile(window.innerWidth < 768);
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
-    return () => window.removeEventListener("resize", checkWidth);
-  }, []);
-
-  useEffect(() => {
-    const hash = location.hash.replace("#", "");
-    const serviceIndex = services.findIndex((s) => s.id === hash);
-    if (serviceIndex !== -1) {
-      setActiveIndex(serviceIndex);
-    }
-  }, [location]);
-
-  const renderServiceDetails = (service: typeof services[number]) => (
-    <div className="service-block">
-      <h2>{service.title[lang]}</h2>
-      <p>{service.description[lang]}</p>
-      {service.details && (
-        <ul>
-          {service.details[lang].map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      )}
-      {service.features && (
-        <div className="features">
-          <h4>{lang === "fr" ? "Caractéristiques" : "Features"}</h4>
-          <ul>
-            {service.features[lang].map((feature, i) => (
-              <li key={i}>{feature}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {service.benefits && (
-        <div className="benefits">
-          <h4>{lang === "fr" ? "Avantages" : "Benefits"}</h4>
-          <p>{service.benefits[lang]}</p>
-        </div>
-      )}
-      {service.cta && (
-        <div className="cta">
-          <strong>{service.cta[lang]}</strong>
-        </div>
-      )}
-      <br />
-      <img
-        src={service.image}
-        alt={service.title[lang]}
-        className="services-image"
-      />
-    </div>
-  );
 
   return (
-    <main className="services-container">
-      {!isMobile && (
-        <div className="services-sidebar">
-          {services.map((service, index) => (
-            <button
-              key={index}
-              className={`service-tab ${index === activeIndex ? "active" : ""}`}
-              onClick={() => setActiveIndex(index)}
-              aria-selected={index === activeIndex}
-              role="tab"
-            >
-              <span className="service-icon" role="img" aria-label="icon">
-                {service.emoji} 
-              </span>
-              {service.title[lang]}
-            </button>
-          ))}
-        </div>
-      )}
+    <main className="services-premium-wrapper">
+      {/* Hero */}
+      <section className="services-premium-hero">
+  <div className="hero-overlay" />
+  <div className="hero-container">
+    <h1>{lang === "fr" ? "Nos services de nettoyage" : "Our Cleaning Services"}</h1>
+    <p>
+      {lang === "fr"
+        ? "Des services fiables et professionnels pour chaque espace, du commercial au résidentiel."
+        : "Reliable, professional services for every space — commercial or residential."}
+    </p>
+    <Link to="/contact" className="hero-btn">
+      {lang === "fr" ? "Demander une soumission" : "Request a Quote"}
+    </Link>
+  </div>
+</section>
 
-      <div className="services-details">
-        {isMobile
-          ? services.map((service, sIndex) => (
-              <div key={sIndex}>{renderServiceDetails(service)}</div>
-            ))
-          : renderServiceDetails(services[activeIndex])}
-      </div>
+
+      {/* Service Blocks */}
+      <section className="services-premium-section">
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            className={`premium-service-block ${index % 2 !== 0 ? "reverse" : ""}`}
+          >
+            <div className="premium-text">
+              <h2>{service.emoji} {service.title[lang]}</h2>
+              <p className="desc">{service.description[lang]}</p>
+
+              {service.details?.[lang] && (
+                <ul>
+                  {service.details[lang].map((item, i) => (
+                    <li key={i}> {item}</li>
+                  ))}
+                </ul>
+              )}
+
+              {service.benefits?.[lang] && (
+                <p className="benefits"><em>{service.benefits[lang]}</em></p>
+              )}
+
+              {service.cta?.[lang] && (
+                <p className="cta"><strong>{service.cta[lang]}</strong></p>
+              )}
+            </div>
+
+            <div className="premium-image">
+              <img src={service.image} alt={service.title[lang]} />
+            </div>
+          </div>
+        ))}
+      </section>
+      <section className="services-cta-footer">
+  <div className="cta-overlay" />
+  <div className="cta-inner">
+    <h2>
+      {lang === "fr"
+        ? "Obtenez un espace impeccable dès aujourd’hui"
+        : "Get a Sparkling Space Today"}
+    </h2>
+    <p>
+      {lang === "fr"
+        ? "Contactez-nous pour une soumission rapide et personnalisée."
+        : "Reach out now for a fast, personalized quote."}
+    </p>
+    <Link to="/contact" className="cta-button">
+      {lang === "fr" ? "Demander une soumission" : "Request a Quote"}
+    </Link>
+  </div>
+</section>
+
     </main>
   );
 };
