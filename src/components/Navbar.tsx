@@ -15,7 +15,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/">
+        <Link to="/"      className="nav-brand"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <img
             src="/assets/mar-bec-logo-white-transparent.png"
             alt="Mar-Bec Entretien Inc."

@@ -1,0 +1,70 @@
+.tcar-root {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tcar-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .tcar-track { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .tcar-track { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.tcar-card {
+  background: #ffffff;
+  border-left: 4px solid #014f86;
+  border: 1px solid #e6eef6;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  padding: 1.25rem;
+  min-height: 160px;
+}
+
+.tcar-quote {
+  color: #012a4a;
+  font-style: italic;
+  margin: 0 0 .75rem;
+  line-height: 1.6;
+}
+.tcar-name {
+  color: #014f86;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* controls */
+.tcar-controls {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin: 1rem 0 .25rem;
+}
+.tcar-btn {
+  border: 1px solid #cfe3f6;
+  background: #f1f7ff;
+  color: #014f86;
+  border-radius: 8px;
+  padding: .4rem .8rem;
+  cursor: pointer;
+}
+.tcar-btn:hover { filter: brightness(1.05); }
+
+/* dots */
+.tcar-dots {
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+  margin-bottom: .5rem;
+}
+.tcar-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #cfe3f6; border: none; cursor: pointer;
+}
+.tcar-dot.active { background: #014f86; }

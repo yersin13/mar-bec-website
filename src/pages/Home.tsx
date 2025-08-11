@@ -88,7 +88,13 @@ const Home: React.FC = () => {
       <TrustIcons lang={lang} />
          <ServicesPreview lang={lang} />
          <AboutPreview lang={lang} />
-      <TestimonialsPreview lang={lang} />
+{/* Old: <TestimonialsPreview lang={lang} /> */}
+<TestimonialsPreview
+  lang={lang}
+  maxItems={3}
+  linkHref="/apropos"
+/>
+
 
 <ContactCTA lang={lang} />
    
