@@ -166,3 +166,8 @@ button[type="submit"]:hover {
   background: url('/assets/bubbles-bottom-wave.png') no-repeat center bottom;
   background-size: cover;
 }
+
+
+html, body, #root { height: 100%; }
+#root { display: flex; flex-direction: column; }
+.footer { margin-top: auto; }  /* footer pushes to bottom */

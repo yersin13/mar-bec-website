@@ -152,3 +152,54 @@
 }
 .why-list { list-style: none; padding-left: 0; margin: 0; }
 .why-list li { margin: .25rem 0; color: #3a5268; }
+
+
+/* Inline success/error banners */
+.success-banner,
+.error-banner {
+  max-width: 1100px;
+  margin: 0 auto 1rem;
+  padding: .9rem 1rem;
+  border-radius: 10px;
+  font-size: 0.98rem;
+}
+.success-banner {
+  background: #e8f6ee;
+  color: #0d5c2b;
+  border: 1px solid #bfe7cf;
+}
+.error-banner {
+  background: #fdecec;
+  color: #7d1212;
+  border: 1px solid #f6bcbc;
+}
+
+/* Small toast (bottom-right) */
+.contact-toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(1,42,74,.95);
+  color: #fff;
+  padding: .7rem .9rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 1200;
+  font-size: .95rem;
+}
+.contact-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect iOS safe area on mobile */
+@media (max-width: 768px) {
+  .contact-toast {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}

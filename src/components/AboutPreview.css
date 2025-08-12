@@ -11,13 +11,12 @@
   background-image: url('/assets/about1.png');
   background-size: cover;
   background-position: center;
-   background-color: rgba(1, 42, 74, 0.6);
-  background-blend-mode: overlay; 
+  background-color: rgba(1, 42, 74, 0.6);
+  background-blend-mode: overlay;
   filter: blur(12px) brightness(0.8);
-  opacity: 0.8; 
+  opacity: 0.8;
   z-index: 0;
 }
-
 
 .about-content {
   position: relative;
@@ -54,13 +53,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ✅ Updated aesthetic box styling */
+/* White card */
 .about-text {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   max-width: 600px;
   width: 100%;
   color: #111;
@@ -131,7 +131,9 @@
   transform: translateY(-1px);
 }
 
-/* ✅ Responsive Design */
+/* =======================
+   Responsive (mobile)
+   ======================= */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -144,12 +146,23 @@
     padding: 0;
     text-align: center;
   }
-  .about-text{
-    padding: 10px;
+
+  /* Give the button shadow space inside the card */
+  .about-text {
+    padding: 1.25rem 1rem 2.25rem;     /* more bottom padding */
+    overflow: visible;                 /* let child shadows render */
+    backdrop-filter: none;             /* FIX: avoid mobile clipping */
+    -webkit-backdrop-filter: none;     /* FIX for iOS/Safari mobile */
   }
 
-  .about-text ul {
+  .about-text ul {                     /* keep your list centered */
     margin: 0 auto;
     max-width: 400px;
+  }
+
+  /* Let shadows spill past the section bottom just in case */
+  .about-preview {
+    overflow: visible;
+    padding-bottom: calc(28px + env(safe-area-inset-bottom));
   }
 }

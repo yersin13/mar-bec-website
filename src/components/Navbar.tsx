@@ -8,14 +8,20 @@ import "../styles/Navbar.css";
 const Navbar: React.FC = () => {
   const { lang } = useContext(LangContext);
   const t = labels[lang];
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsMobileMenuOpen(prev => !prev);
-  const closeMenu = () => setIsMobileMenuOpen(false);
-  const handleLinkClick = () => {  window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); if (isMobileMenuOpen) closeMenu(); };
+  const toggleMenu = () => setIsMobileMenuOpen((v) => !v);
+  const closeMenu  = () => setIsMobileMenuOpen(false);
 
-  // Close on route change
+  // Scroll to top + close (for nav links)
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    if (isMobileMenuOpen) closeMenu();
+  };
+
+  // Close on route change (safety)
   useEffect(() => { closeMenu(); }, [location.pathname]);
 
   // Close if resizing to desktop
@@ -25,12 +31,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Close with ESC
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMenu(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Lock body scroll when drawer open
   useEffect(() => {
     document.body.classList.toggle("no-scroll", isMobileMenuOpen);
   }, [isMobileMenuOpen]);
 
-  
   return (
     <nav className="navbar" role="navigation" aria-label="Main">
       <div className="navbar-brand">
@@ -51,14 +63,15 @@ const Navbar: React.FC = () => {
           onClick={toggleMenu}
           aria-expanded={isMobileMenuOpen}
           aria-controls="primary-navigation"
-          aria-label={isMobileMenuOpen ? (lang === "fr" ? "Fermer le menu" : "Close menu")
-                                       : (lang === "fr" ? "Ouvrir le menu" : "Open menu")}
+          aria-label={isMobileMenuOpen
+            ? (lang === "fr" ? "Fermer le menu" : "Close menu")
+            : (lang === "fr" ? "Ouvrir le menu" : "Open menu")}
         >
           ☰
         </button>
       </div>
 
-      {/* Clickable overlay (closes menu) */}
+      {/* Overlay (tap/click to close) */}
       <div
         className={`nav-overlay ${isMobileMenuOpen ? "show" : ""}`}
         onClick={closeMenu}
@@ -71,10 +84,6 @@ const Navbar: React.FC = () => {
         <li><Link to="/contact" onClick={handleLinkClick}>{t.contact}</Link></li>
         <li className="lang-li"><LanguageToggle /></li>
       </ul>
-      <div
-  className={`nav-overlay ${isMobileMenuOpen ? "show" : ""}`}
-  onClick={() => setIsMobileMenuOpen(false)}
-/>
     </nav>
   );
 };
