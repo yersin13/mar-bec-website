@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import "./styles/global.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
+import Thanks from "./pages/Thanks";
 
 const App: React.FC = () => (
   <LanguageProvider>
@@ -18,6 +19,10 @@ const App: React.FC = () => (
         <Route path="/services" element={<Services />} />
         <Route path="/apropos" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        
+  {/* your other routes */}
+  <Route path="/thanks" element={<Thanks />} />
+
       </Routes>
       <Footer />
     </Router>

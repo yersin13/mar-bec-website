@@ -9,6 +9,10 @@ background-color: #f0f4f8; /* very soft blue-gray */
   color: #222;
   line-height: 1.6;
 }
+:root { --nav-height: 72px; }           /* adjust if your nav is taller/shorter */
+.contact-wrap { padding-top: calc(2.5rem + var(--nav-height)); }
+.svc-hero { padding-top: calc(2.5rem + var(--nav-height)); }
+.contact-header h1 { margin-top: 0; }    /* avoid double spacing */
 
 
 a {
@@ -16,7 +20,7 @@ a {
   color: inherit;
 }
 
-.nav {
+/* .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +28,7 @@ a {
   padding: 1rem 2rem;
   color: white;
   flex-wrap: wrap;
-}
+} */
 
 .nav-brand {
   font-size: 1.5rem;
