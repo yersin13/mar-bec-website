@@ -6,6 +6,7 @@ import AboutPreview from "../components/AboutPreview";
 import TrustIcons from "../components/TrustIcons";
 import TestimonialsPreview from "../components/TestimonialsPreview";
 import ContactCTA from "../components/ContactCTA";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   const { lang } = useContext(LangContext);
@@ -16,74 +17,38 @@ const Home: React.FC = () => {
 
   return (
     <main className="main-content">
-      <section
-        style={{
-          width: '100vw',
-          height: '100vh',
-          backgroundImage: "url('/assets/hero.png')",
-          backgroundSize: 'cover',
-         backgroundPosition: 'right 50% center',
-          backgroundRepeat: 'no-repeat',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: 'rgba(1, 42, 74, 0.64)',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            padding: '2rem',
-            textAlign: 'center',
-            flexDirection: 'column',
-          }}
-        >
-          <img
-            src="/assets/mar-bec-logo-white-transparent.png"
-            alt="Mar-Bec Entretien Inc. logo"
-            style={{
-              maxWidth: '400px',
-              width: '80%',
-              marginBottom: '1rem',
-            }}
-          />
+<section className="hero">
+  <div className="hero__overlay" aria-hidden="true" />
 
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 'normal', marginBottom: '0.5rem', color: '#E1F3FF' }}>
-            {lang === 'fr'
-              ? 'Experts en propreté professionnelle sur la Rive-Sud de Montréal'
-              : 'Professional Cleaning Experts on Montreal’s South Shore'}
-          </h2>
+  <div className="hero__inner">
+    <img
+      src="/assets/mar-bec-logo-white-transparent.png"
+      alt="Mar-Bec Entretien Inc. logo"
+      className="hero__logo"
+    />
 
-          <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: '#E1F3FF' }}>
-            {lang === 'fr'
-              ? 'Ménage commercial et résidentiel – Service personnalisé, fiable et rigoureux'
-              : 'Commercial and residential cleaning – Personalized, reliable, and thorough'}
-          </p>
+    <h2 className="hero__subtitle">
+      {lang === "fr"
+        ? "Experts en propreté professionnelle sur la Rive-Sud de Montréal"
+        : "Professional Cleaning Experts on Montreal’s South Shore"}
+    </h2>
 
-          <a href="/contact">
-            <button
-              style={{
-                backgroundColor: '#2986CC',
-                color: 'white',
-                padding: '12px 24px',
-                border: 'none',
-                borderRadius: '4px',
-                fontSize: '1rem',
-                cursor: 'pointer',
-              }}
-            >
-              {lang === 'fr' ? 'Demander une soumission' : 'Request a Quote'}
-            </button>
-          </a>
-        </div>
-      </section>
+    <p className="hero__tagline">
+      {lang === "fr"
+        ? "Ménage commercial et résidentiel – Service personnalisé, fiable et rigoureux"
+        : "Commercial and residential cleaning – Personalized, reliable, and thorough"}
+    </p>
+
+    <Link
+      to="/contact"
+      className="hero__cta"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
+      {lang === "fr" ? "Demander une soumission" : "Request a Quote"}
+    </Link>
+  </div>
+</section>
+
 
       <TrustIcons lang={lang} />
          <ServicesPreview lang={lang} />
