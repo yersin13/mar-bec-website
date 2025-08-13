@@ -2,7 +2,9 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: clamp(520px, calc(100vh - var(--nav-h, 72px)), 920px);
+  /* min-height: clamp(800px, calc(100vh - var(--nav-h, 72px)), 920px); */
+min-height: calc(90vh - var(--nav-h, 72px));  
+/* min-height:70vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +19,7 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(1, 42, 74, 0.60); /* adjust 0.50–0.65 if needed */
+  background: rgba(1, 42, 74, 0.70); /* adjust 0.50–0.65 if needed */
   pointer-events: none;
 }
 
