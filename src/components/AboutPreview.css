@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 4rem 1rem;
-  background-color: #f9f9fb;
+  /* THEME */ background-color: var(--surface, #f9f9fb);
 }
 
 .about-bg {
@@ -11,7 +11,7 @@
   background-image: url('/assets/about1.png');
   background-size: cover;
   background-position: center;
-  background-color: rgba(1, 42, 74, 0.6);
+  /* THEME */ background-color: rgba(var(--brand-rgb, 1,42,74), 0.6);
   background-blend-mode: overlay;
   filter: blur(12px) brightness(0.8);
   opacity: 0.8;

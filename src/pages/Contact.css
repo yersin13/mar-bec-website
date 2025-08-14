@@ -13,7 +13,7 @@
   margin: 0 auto;
   padding: 2.5rem 1.25rem 4rem;
   font-family: 'Segoe UI', 'Open Sans', system-ui, -apple-system, sans-serif;
-  color: #012a4a;
+  color: var(--text, #012a4a);
 }
 
 /* Header */
@@ -24,7 +24,7 @@
 }
 .contact-sub {
   text-align: center;
-  color: #3a5268;
+  color: var(--text-muted, #3a5268);
   margin: 0 auto 1.25rem;
   max-width: 780px;
   font-size: 1.05rem;
@@ -42,10 +42,10 @@
 
 /* Form card */
 .contact-form-card {
-  background: #f7f9fc;
-  border: 1px solid rgba(1,42,74,.06);
+  background: var(--surface, #f7f9fc);
+  border: 1px solid rgba(var(--brand-rgb, 1,42,74), .06);
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(1,42,74,.06);
+  box-shadow: 0 6px 18px rgba(var(--brand-rgb, 1,42,74), .06);
   padding: 1.5rem;
 }
 .contact-form {
@@ -70,8 +70,8 @@
 .contact-form textarea::placeholder { color: #8aa0b2; }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #2a7ab9;
-  box-shadow: 0 0 0 3px rgba(42,122,185,.15);
+  border-color: var(--accent, #2a7ab9);
+  box-shadow: 0 0 0 3px rgba(var(--brand-rgb, 1,42,74), .15);
 }
 .contact-form button {
   align-self: center;
@@ -80,7 +80,7 @@
   padding: .95rem 1.25rem;
   border: 0;
   border-radius: 10px;
-  background: #2a7ab9;
+  background: var(--accent, #2a7ab9);
   color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
@@ -114,17 +114,17 @@
 }
 .info-card {
   background: #fff;
-  border: 1px solid rgba(1,42,74,.08);
+  border: 1px solid rgba(var(--brand-rgb, 1,42,74), .08);
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(1,42,74,.05);
+  box-shadow: 0 4px 12px rgba(var(--brand-rgb, 1,42,74), .05);
 }
 .info-card h3 {
   margin: 0 0 .4rem;
   font-size: 1.05rem;
 }
 .info-card a {
-  color: #2a7ab9;
+  color: var(--accent, #2a7ab9);
   text-decoration: none;
   font-weight: 600;
 }
@@ -136,8 +136,8 @@
 }
 
 .info-block {
-  background: #f7fbff;
-  border: 1px solid rgba(1,42,74,.06);
+  background: var(--surface-2, #f7fbff);
+  border: 1px solid rgba(var(--brand-rgb, 1,42,74), .06);
   border-radius: 12px;
   padding: 1rem 1.1rem;
 }
@@ -153,8 +153,7 @@
 .why-list { list-style: none; padding-left: 0; margin: 0; }
 .why-list li { margin: .25rem 0; color: #3a5268; }
 
-
-/* Inline success/error banners */
+/* Inline success/error banners (semantic colors keep hard-coded) */
 .success-banner,
 .error-banner {
   max-width: 1100px;
@@ -179,7 +178,7 @@
   position: fixed;
   right: 16px;
   bottom: 16px;
-  background: rgba(1,42,74,.95);
+  background: rgba(var(--brand-rgb, 1,42,74), .95);
   color: #fff;
   padding: .7rem .9rem;
   border-radius: 10px;

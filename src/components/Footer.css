@@ -1,7 +1,8 @@
 /* src/styles/Footer.css */
 
 .footer {
-  background: #e0f2ff;               /* matches your light blue */
+  /* background: #e0f2ff;                */
+  background: var(--surface-2, #e0f2ff); color: var(--text, #012a4a);
   color: #012a4a;
   border-top: 1px solid rgba(1,42,74,.08);
   margin-top: 4rem;

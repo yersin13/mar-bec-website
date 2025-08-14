@@ -1,13 +1,13 @@
 .trust-icons {
   padding: 3rem 1.5rem;
-  background-color: #f5faff;
+  /* THEME */ background-color: var(--surface-2, #f5faff);
   text-align: center;
 }
 
 .trust-icons-title {
   font-size: 1.8rem;
   margin-bottom: 2rem;
-  color: #012a4a;
+  /* THEME */ color: var(--text, #012a4a);
 }
 
 .trust-icons-grid {
@@ -46,8 +46,8 @@
 .trust-icon-overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(1, 42, 74, 0.7);
-  color: white;
+  /* THEME */ background: rgba(var(--brand-rgb, 1,42,74), 0.70);
+  color: #fff;
   width: 100%;
   padding: 0.8rem;
   text-align: center;

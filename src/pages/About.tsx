@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { LangContext } from "../i18n/LanguageContext";
 import TestimonialsPreview from "../components/TestimonialsPreview"; // keep or remove if you prefer
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
   const { lang } = useContext(LangContext);
@@ -122,14 +123,24 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section section-cta">
-        <div className="container cta">
-          <h3>{t.cta.title}</h3>
-          <p>{t.cta.subtitle}</p>
-          <a className="btn-primary" href="/contact">{t.cta.button}</a>
-        </div>
-      </section>
+     {/* CTA */}
+<section className="section section-cta">
+  <div className="container cta">
+    <h3>{t.cta.title}</h3>
+    <p>{t.cta.subtitle}</p>
+
+    {/* SPA navigation, keeps styling */}
+    <Link
+      to="/contact"
+      className="btn-primary"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label={t.cta.button}
+    >
+      {t.cta.button}
+    </Link>
+  </div>
+</section>
+
     </main>
   );
 };

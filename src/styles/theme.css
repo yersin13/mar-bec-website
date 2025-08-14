@@ -1,0 +1,276 @@
+/* src/styles/theme.css
+   All themes define the exact same tokens for consistency.
+   Tip: Ensure this file is imported once globally (e.g., in App or index) and before component CSS.
+*/
+
+/* =========================
+   Base (NAVY defaults)
+   ========================= */
+:root,
+:root[data-theme="navy"] {
+  --brand: #012a4a;
+  --brand-600: #0b2545;
+  --brand-rgb: 1, 42, 74;
+
+  --accent: #2986cc;
+  --surface: #f7f9fc;
+  --surface-2: #eaf7ff;
+
+  --text: #012a4a;
+  --ink: #ffffff;
+  --ink-subtle: #e1f3ff;
+
+  --highlight: #ffd500;
+  --text-muted: #3a5268;
+  --border: #e6eef6;
+  --chip: #e8f2fb;
+  --chip-line: #cfe3f6;
+  --link: #2986cc;
+  --link-hover: #1e6aad;
+}
+
+/* =========================
+   Alternative themes (brand-aligned)
+   ========================= */
+
+:root[data-theme="teal"] {
+  --brand: #0d3f4d;
+  --brand-600: #0a303c;
+  --brand-rgb: 13, 63, 77;
+
+  --accent: #22b8a7;
+  --surface: #eef7f8;
+  --surface-2: #e3f2f2;
+
+  --text: #0a303c;
+  --ink: #ffffff;
+  --ink-subtle: #e8fffb;
+
+  --highlight: #ffcf3a;
+  --text-muted: #3b5561;
+  --border: #d7e6ea;
+  --chip: #e6f4f4;
+  --chip-line: #c9e3e3;
+  --link: #22b8a7;
+  --link-hover: #1aa294;
+}
+
+:root[data-theme="midnight"] {
+  --brand: #0b1f33;
+  --brand-600: #071729;
+  --brand-rgb: 11, 31, 51;
+
+  --accent: #2a7ab9;
+  --surface: #f6f8fb;
+  --surface-2: #edf2f9;
+
+  --text: #0b1f33;
+  --ink: #ffffff;
+  --ink-subtle: #e9f2ff;
+
+  --highlight: #ffd24a;
+  --text-muted: #394c5e;
+  --border: #e0e7f0;
+  --chip: #eef4fb;
+  --chip-line: #d8e4f2;
+  --link: #2a7ab9;
+  --link-hover: #1e6aad;
+}
+
+:root[data-theme="royal"] {
+  --brand: #0a2a6b;
+  --brand-600: #071f52;
+  --brand-rgb: 10, 42, 107;
+
+  --accent: #3b82f6;
+  --surface: #eef3ff;
+  --surface-2: #e4edff;
+
+  --text: #071f52;
+  --ink: #ffffff;
+  --ink-subtle: #e9f2ff;
+
+  --highlight: #ffdb5d;
+  --text-muted: #394a69;
+  --border: #dfe7fb;
+  --chip: #e9f0ff;
+  --chip-line: #d1dcfb;
+  --link: #3b82f6;
+  --link-hover: #2667d1;
+}
+
+:root[data-theme="ocean"] {
+  --brand: #013a63;
+  --brand-600: #012a4a;
+  --brand-rgb: 1, 58, 99;
+
+  --accent: #06b6d4;
+  --surface: #eef9ff;
+  --surface-2: #e3f5fb;
+
+  --text: #0a2540;
+  --ink: #ffffff;
+  --ink-subtle: #e7f7ff;
+
+  --highlight: #ffd24a;
+  --text-muted: #3a5166;
+  --border: #d5e9f6;
+  --chip: #e6f6fb;
+  --chip-line: #cdebf4;
+  --link: #06b6d4;
+  --link-hover: #0891b2;
+}
+
+:root[data-theme="slate"] {
+  --brand: #1f2d3d;
+  --brand-600: #16222f;
+  --brand-rgb: 31, 45, 61;
+
+  --accent: #5fa8d3;
+  --surface: #f5f7fa;
+  --surface-2: #edf2f7;
+
+  --text: #16222f;
+  --ink: #ffffff;
+  --ink-subtle: #eaf1fb;
+
+  --highlight: #ffcf3a;
+  --text-muted: #405368;
+  --border: #e0e6ee;
+  --chip: #eef3f8;
+  --chip-line: #d5e2ee;
+  --link: #5fa8d3;
+  --link-hover: #468fb9;
+}
+
+:root[data-theme="sky"] {
+  --brand: #0d47a1;
+  --brand-600: #0a3a82;
+  --brand-rgb: 13, 71, 161;
+
+  --accent: #42a5f5;
+  --surface: #eff6ff;
+  --surface-2: #e3f2ff;
+
+  --text: #0a3a82;
+  --ink: #ffffff;
+  --ink-subtle: #e7f1ff;
+
+  --highlight: #ffd24a;
+  --text-muted: #3a4f73;
+  --border: #dae7ff;
+  --chip: #e9f0ff;
+  --chip-line: #d1dcff;
+  --link: #42a5f5;
+  --link-hover: #1e88e5;
+}
+
+:root[data-theme="steel"] {
+  --brand: #2c3e50;
+  --brand-600: #233142;
+  --brand-rgb: 44, 62, 80;
+
+  --accent: #3498db;
+  --surface: #f4f7fb;
+  --surface-2: #e9f1f8;
+
+  --text: #233142;
+  --ink: #ffffff;
+  --ink-subtle: #e9f3ff;
+
+  --highlight: #ffc94d;
+  --text-muted: #3b4e62;
+  --border: #dde6ef;
+  --chip: #ebf2f8;
+  --chip-line: #d4e2ef;
+  --link: #3498db;
+  --link-hover: #2c82c6;
+}
+
+:root[data-theme="spruce"] {
+  --brand: #0b4f6c;
+  --brand-600: #083b51;
+  --brand-rgb: 11, 79, 108;
+
+  --accent: #2ec4b6;
+  --surface: #e9f7fb;
+  --surface-2: #def3f5;
+
+  --text: #083b51;
+  --ink: #ffffff;
+  --ink-subtle: #e7fcfb;
+
+  --highlight: #ffd86b;
+  --text-muted: #325a67;
+  --border: #cfe9ef;
+  --chip: #e4f6f4;
+  --chip-line: #c7e9e5;
+  --link: #2ec4b6;
+  --link-hover: #25a99e;
+}
+
+:root[data-theme="gold"] {
+  --brand: #0a2a4a;
+  --brand-600: #061d33;
+  --brand-rgb: 10, 42, 74;
+
+  --accent: #f59e0b;
+  --surface: #fbf9f1;
+  --surface-2: #f7f1de;
+
+  --text: #0a2a4a;
+  --ink: #ffffff;
+  --ink-subtle: #fff4dc;
+
+  --highlight: #ffd166;
+  --text-muted: #3e4e62;
+  --border: #efe7ce;
+  --chip: #faf3dc;
+  --chip-line: #eadfb3;
+  --link: #f59e0b;
+  --link-hover: #d97706;
+}
+
+:root[data-theme="mono"] {
+  --brand: #273444;
+  --brand-600: #1f2a37;
+  --brand-rgb: 39, 52, 68;
+
+  --accent: #3b82f6;
+  --surface: #f8fafc;
+  --surface-2: #eef2f7;
+
+  --text: #1f2a37;
+  --ink: #ffffff;
+  --ink-subtle: #e9f2ff;
+
+  --highlight: #ffd24a;
+  --text-muted: #445161;
+  --border: #e3e8ef;
+  --chip: #eff3f7;
+  --chip-line: #d7e2ec;
+  --link: #3b82f6;
+  --link-hover: #2667d1;
+}
+
+:root[data-theme="contrast"] {
+  --brand: #001a33;
+  --brand-600: #001326;
+  --brand-rgb: 0, 26, 51;
+
+  --accent: #0077ff;
+  --surface: #ffffff;
+  --surface-2: #f2f7ff;
+
+  --text: #001326;
+  --ink: #ffffff;
+  --ink-subtle: #e7f1ff;
+
+  --highlight: #ffd200;
+  --text-muted: #213a56;
+  --border: #0d3a66;
+  --chip: #e9f2ff;
+  --chip-line: #cfe1ff;
+  --link: #0077ff;
+  --link-hover: #005ad1;
+}
